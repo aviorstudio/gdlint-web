@@ -1,0 +1,101 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'gdlint — GDScript hygiene checker for Godot projects',
+	description =
+		'A project-local linter for Godot. Finds unused functions, signals, constants, enums and files, leftover prints, orphaned .gd.uid files, space indentation and dynamic has_method() calls — and removes them with -fix.',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, 'https://gdlint.dev');
+
+// Two entries rather than one. The SoftwareApplication is the tool people are
+// being sent to install; the FAQPage is the questions this page actually
+// answers, and they are the queries that bring anyone here — "godot linter",
+// "find unused gdscript". Both describe what is on the page, which is the only
+// kind of structured data worth emitting.
+const structuredData = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'SoftwareApplication',
+		name: 'gdlint',
+		url: 'https://gdlint.dev',
+		applicationCategory: 'DeveloperApplication',
+		operatingSystem: 'Linux, macOS, Windows',
+		description,
+		offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: [
+			{
+				'@type': 'Question',
+				name: 'What does gdlint check?',
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text:
+						'Code hygiene inside a Godot project: unused functions, signals, constants, enums, class names and whole files; print and debug statements; comments outside the allowed prefixes; unnecessary pass statements; orphaned .gd.uid files; space indentation; dynamic has_method() calls; explicit Variant usage; and missing return type annotations. Empty functions and single-use functions are available as warnings.',
+				},
+			},
+			{
+				'@type': 'Question',
+				name: 'Is gdlint an architecture checker?',
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text:
+						'No, deliberately. It knows nothing about workspace layouts, directory naming, required sibling files, import direction or autoload ownership. Those rules belong to a project-specific architecture tool, not to a hygiene checker.',
+				},
+			},
+			{
+				'@type': 'Question',
+				name: 'How does gdlint decide a file is unused?',
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text:
+						'It follows preload, load and file-path extends across every .gd file, the ext_resource and script paths inside every .tscn scene, and the autoload list in project.godot. A file nothing on any of those paths points at is reported as unused.',
+				},
+			},
+			{
+				'@type': 'Question',
+				name: 'What is enabled by default?',
+				acceptedAnswer: {
+					'@type': 'Answer',
+					text:
+						'Four checks: print statements, unnecessary pass statements, orphaned .gd.uid files and indentation. Every other rule is off until it is switched on in gdlint.json, which gdlint init writes for you.',
+				},
+			},
+		],
+	},
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#f1f3f5" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href={canonical} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="gdlint" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+	</head>
+	<body><slot /></body>
+</html>

@@ -1,1 +1,35 @@
-@import "tailwindcss";
+/* Fonts are the platform's own, not fetched. The stacks below reach for the
+   native UI sans and native monospace of each platform, so the site loads what
+   the reader already has, makes no third-party request, sends nobody's IP to a
+   font CDN, and needs no CSP exception to do it. */
+
+/* The accent is the engine's. gdlint refuses to run anywhere that is not a
+   Godot project root -- it looks for project.godot and exits if it is not
+   there -- so the site wears the colour of the thing it plugs into rather than
+   inventing a brand the tool does not have. #478BBF is the Godot editor blue;
+   --blue-deep is the darkened form that clears contrast on paper, since the
+   editor blue is a dark-UI accent and too light to read small text in.
+
+   Inside the terminal frame the colours are gdlint's own: it prints errors in
+   ANSI red, warnings in yellow, the summary header in cyan, locations in grey,
+   and a clean run in green. Those are reproduced there rather than restyled. */
+:root {
+	--ink: #14191f;
+	--quiet: #5c666f;
+	--blue: #478bbf;
+	--blue-deep: #2c6489;
+	--paper: #f1f3f5;
+	--sans: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+	--mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'JetBrains Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+	font-family: var(--sans);
+	background: var(--paper);
+	color: var(--ink);
+	font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: var(--paper); }
+body { min-width: 320px; min-height: 100svh; margin: 0; background: var(--paper); text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+button, input, textarea, select { font: inherit; }
+::selection { background: var(--blue); color: white; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
