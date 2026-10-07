@@ -9,7 +9,7 @@ interface Props {
 const {
 	title = 'gdlint — GDScript hygiene checker for Godot projects',
 	description =
-		'A project-local linter for Godot. Finds unused functions, signals, constants, enums and files, leftover prints, orphaned .gd.uid files, space indentation and dynamic has_method() calls — and removes them with -fix.',
+		'A project-local hygiene checker for GDScript. Four checks on by default, with optional unused-code and typing rules. Review the report before using -fix.',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, 'https://gdlint.dev');
@@ -40,7 +40,7 @@ const structuredData = [
 				acceptedAnswer: {
 					'@type': 'Answer',
 					text:
-						'Code hygiene inside a Godot project: unused functions, signals, constants, enums, class names and whole files; print and debug statements; comments outside the allowed prefixes; unnecessary pass statements; orphaned .gd.uid files; space indentation; dynamic has_method() calls; explicit Variant usage; and missing return type annotations. Empty functions and single-use functions are available as warnings.',
+						'Four checks run by default: prints, stray pass statements, orphaned UID files and indentation. Optional rules cover unused functions, signals, constants, enums, class names and whole files; print and debug statements; comments outside the allowed prefixes; unnecessary pass statements; orphaned .gd.uid files; space indentation; dynamic has_method() calls; explicit Variant usage; and missing return type annotations. Empty functions and single-use functions are available as warnings.',
 				},
 			},
 			{
@@ -81,7 +81,7 @@ const structuredData = [
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={description} />
-		<meta name="theme-color" content="#f5f2f9" />
+		<meta name="theme-color" content="#f4f6f0" />
 		<meta name="robots" content="index, follow" />
 		<link rel="canonical" href={canonical} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
