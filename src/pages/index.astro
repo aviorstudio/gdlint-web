@@ -44,24 +44,19 @@ const rules = [
 			<a class="header-cta" href={repo}>GitHub <span class="icon" set:html={icon('arrow-up-right', 14)} /></a>
 		</header>
 
-		<main>
+		<main id="main-content">
 			<section class="hero">
 				<div class="hero-copy">
 					<p class="eyebrow"><span></span> Godot · GDScript</p>
-					<h1>Dead code, <em>found and gone.</em></h1>
-					<p class="lede">
-						gdlint reads every script in your Godot project — and every scene and autoload entry
-						that could be pointing at one — then tells you what nothing references. Leftover
-						prints, orphaned <code>.gd.uid</code> files and dynamic <code>has_method()</code>
-						calls too. Run it with <code>-fix</code> and it takes them out.
-					</p>
+					<h1>Find the leftovers. <em>Keep the good parts.</em></h1>
+					<p class="lede">A project-local hygiene check for GDScript. Catch debug prints, stray pass statements, orphaned UID files and indentation issues by default. Turn on deeper checks when your project needs them.</p>
 					<div class="hero-actions">
 						<code class="install">go install github.com/aviorstudio/gdlint@latest</code>
 						<p>Go · one static binary · Linux, macOS and Windows</p>
 					</div>
 				</div>
 
-				<div class="product-frame" aria-label="gdlint output on a Godot project">
+				<p class="example-note">Configured example: optional unused-code and typing rules are enabled here. See the defaults table below for a fresh project.</p><div class="product-frame" aria-label="gdlint output on a Godot project">
 					<div class="frame-bar">
 						<div class="frame-brand"><span class="menu-lines"></span> gdlint / godot_client</div>
 						<div class="frame-actions"><span class="icon" set:html={icon('checklist', 13)} /><span class="icon" set:html={icon('terminal', 13)} /></div>
@@ -335,4 +330,32 @@ const rules = [
 		.footer-brand { display: none; }
 		footer p:nth-child(2) { text-align: left; }
 	}
+
+
+/* A code review desk: violet margins, red diagnostics, and a full-width result. */
+.hero { grid-template-columns: 1fr; gap: 40px; margin-top: 60px; }
+.hero-copy { max-width: 900px; }
+h1 { max-width: 900px; font-size: clamp(52px,7.5vw,104px); font-weight: 720; line-height: 1.04; }
+h1 em { font-family: var(--mono); font-size: .82em; font-style: normal; color: #6342ad; }
+.eyebrow { color: #6342ad; }
+.eyebrow span { background: #6342ad; box-shadow: none; border-radius: 0; }
+.lede { max-width: 760px; font-size: 18px; }
+.product-frame { width: 100%; min-width: 0; transform: none; border-radius: 12px; box-shadow: none; border: 1px solid #cfc9dd; }
+.product-frame::before { display: none; }
+.frame-bar { background: #e7e0f2; color: #422976; }
+.principles { background: #fff; border: 0; padding: 0 32px; }
+.principles article { padding: 34px 0; }
+.number { color: #6342ad; font-size: 14px; }
+.principles h2 { font-size: 25px; }
+.rules { border-top: 4px solid #6342ad; padding-top: 40px; }
+.closing { border-radius: 12px; background: #241938; }
+.closing > p { font-family: var(--mono); font-size: clamp(38px,5vw,64px); letter-spacing: -.065em; }
+@media (max-width: 900px) { .principles article div { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .hero { margin-top: 35px; } h1 { font-size: 48px; } .lede { font-size: 16px; } .principles { padding: 0 18px; } }
+
+.example-note { margin: 0; color: #52525b; font: 12px/1.6 var(--mono); }
+
+.hero-actions p { color: #526174; }
+
+h1 em { display: block; margin-top: 8px; font-weight: 600; }
 </style>
