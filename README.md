@@ -57,17 +57,9 @@ actually follows: `preload`, `load` and file-path `extends` in `.gd`, the
 `ext_resource type="Script"` and `script = "res://…"` paths in `.tscn`, and the
 `*res://….gd` autoload entries in `project.godot`.
 
-## Colour
+## Presentation
 
-The accent is the Godot editor blue. `gdlint` refuses to run anywhere that is
-not a Godot project root — it looks for `project.godot` and exits if it is not
-there — so the site wears the colour of the thing it plugs into rather than
-inventing a brand the tool does not have. `--blue-deep` is the darkened form
-used for text on paper, since the editor blue is a dark-UI accent and does not
-carry small type on a light background.
-
-Fonts are the platform's own. No font is fetched, so no visitor's IP reaches a
-font CDN and no CSP exception is needed to render the page.
+The review-desk layout uses violet margins and the tool’s original red, yellow, cyan and grey diagnostics. The configured output example is explicitly labelled; the defaults table remains authoritative for a fresh project. No fonts are fetched from a third party.
 
 ## Domain
 
