@@ -1,10 +1,10 @@
-<!-- Generated from private documentation source. Do not edit directly. Source SHA256: a0eb16bcf7ebc24b98b7a4997b1f35d30b181df7f285f75f7665bc7e99f8833d -->
+<!-- Generated from private documentation source. Do not edit directly. Source SHA256: 398b3f52e210c92986574a61d7ef6f8e1ceb7daf4ed027211a1260691f30cfff -->
 
 # gdlint-web
 
 Static website built with Astro.
 
-Install the [Komizo release](https://github.com/nicodes/komizo#install) matching `komizo.lock`, then run:
+Install the [komizo release](https://github.com/nicodes/komizo#install) matching `komizo.lock`, then run:
 
 ```sh
 komizo dev                 # Foreground development server
