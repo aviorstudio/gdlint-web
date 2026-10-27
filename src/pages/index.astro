@@ -26,6 +26,7 @@ const rules = [
 	{ key: 'single_use_functions', kind: 'warning', on: false, catches: 'functions with exactly one caller' },
 	{ key: 'empty_functions', kind: 'warning', on: false, catches: 'functions with nothing in them' },
 ];
+const installCommand = "curl -fsSL https://gdlint.dev/install | sh";
 ---
 
 <Full>
@@ -55,7 +56,7 @@ const rules = [
 					<a class="cta" href={releases}>
 						Get gdlint ↗
 					</a>
-					<code class="install-command">go install github.com/aviorstudio/gdlint@latest</code>
+					<code class="install-command">{installCommand}</code>
 				</div>
 				<div class="review-board">
 					<div class="review-header">

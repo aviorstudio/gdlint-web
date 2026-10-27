@@ -1,4 +1,4 @@
-<!-- Generated from private documentation source. Do not edit directly. Source SHA256: 398b3f52e210c92986574a61d7ef6f8e1ceb7daf4ed027211a1260691f30cfff -->
+<!-- Generated from private documentation source. Do not edit directly. Source SHA256: f86606f781b0aba07c647b4ff7410f8d6dc797f4ac1692a6c1606a15582aaa89 -->
 
 # gdlint-web
 
@@ -14,3 +14,11 @@ komizo describe            # Inspect tools and available commands
 ```
 
 Ctrl-C stops development. This website needs no runtime credentials or credential `.env` file.
+
+## Install the CLI
+
+```sh
+curl -fsSL https://gdlint.dev/install | sh
+```
+
+See [gdlint](https://github.com/aviorstudio/gdlint#readme) for setup and installation options.
