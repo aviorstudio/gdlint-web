@@ -1,4 +1,5 @@
 ---
+import InstallCommand from '../components/InstallCommand.astro';
 import Full from '../layouts/Full.astro';
 
 const repo = 'https://github.com/aviorstudio/gdlint';
@@ -27,6 +28,7 @@ const rules = [
 	{ key: 'empty_functions', kind: 'warning', on: false, catches: 'functions with nothing in them' },
 ];
 const installCommand = "curl -fsSL https://gdlint.dev/install | sh";
+const miseCommand = "mise use --global github:aviorstudio/gdlint@latest";
 ---
 
 <Full>
@@ -56,7 +58,7 @@ const installCommand = "curl -fsSL https://gdlint.dev/install | sh";
 					<a class="cta" href={releases}>
 						Get gdlint ↗
 					</a>
-					<code class="install-command">{installCommand}</code>
+					<div class="install-command"><span>curl</span><InstallCommand command={installCommand} method="curl" /><span>mise</span><InstallCommand command={miseCommand} method="mise" /></div>
 				</div>
 				<div class="review-board">
 					<div class="review-header">
@@ -191,6 +193,7 @@ const installCommand = "curl -fsSL https://gdlint.dev/install | sh";
 			</nav>
 		</footer>
 	</div>
+	<script is:inline type="module" src="/install-copy.js"></script>
 </Full>
 <style>
 	* {
@@ -253,6 +256,10 @@ const installCommand = "curl -fsSL https://gdlint.dev/install | sh";
 	}
 	.topbar nav a {
 		text-decoration: none;
+	}
+	.install-command code {
+		display: block;
+		margin: 4px 0 12px;
 	}
 	.tag {
 		font: 11px var(--mono);

@@ -1,4 +1,4 @@
-<!-- Generated from private documentation source. Do not edit directly. Source SHA256: f86606f781b0aba07c647b4ff7410f8d6dc797f4ac1692a6c1606a15582aaa89 -->
+<!-- Generated from private documentation source. Do not edit directly. Source SHA256: 89efcb38645d08a9bd4c3e856a79c375ccedf806a7d0ece6c0ccdbdeb1b0eab4 -->
 
 # gdlint-web
 
@@ -17,8 +17,18 @@ Ctrl-C stops development. This website needs no runtime credentials or credentia
 
 ## Install the CLI
 
+With curl:
+
 ```sh
 curl -fsSL https://gdlint.dev/install | sh
 ```
+
+Or with mise:
+
+```sh
+mise use --global github:aviorstudio/gdlint@latest
+```
+
+Each install command has a Copy button with confirmation. If clipboard access is unavailable, the command remains selectable for manual copying.
 
 See [gdlint](https://github.com/aviorstudio/gdlint#readme) for setup and installation options.
