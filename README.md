@@ -1,4 +1,4 @@
-<!-- Generated from private documentation source. Do not edit directly. Source SHA256: 89efcb38645d08a9bd4c3e856a79c375ccedf806a7d0ece6c0ccdbdeb1b0eab4 -->
+<!-- Generated from private documentation source. Do not edit directly. Source SHA256: d3a57d70d330566437934650edfa291c435a1acbe732b4bf774fe991137ce04c -->
 
 # gdlint-web
 
@@ -29,6 +29,6 @@ Or with mise:
 mise use --global github:aviorstudio/gdlint@latest
 ```
 
-Each install command has a Copy button with confirmation. If clipboard access is unavailable, the command remains selectable for manual copying.
+An icon-only copy control sits on the right inside each install-command outline and shows a checkmark after copying. If clipboard access is unavailable, the command remains selectable for manual copying.
 
 See [gdlint](https://github.com/aviorstudio/gdlint#readme) for setup and installation options.
