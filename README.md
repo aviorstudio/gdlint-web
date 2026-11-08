@@ -1,4 +1,4 @@
-<!-- Generated from private documentation source. Do not edit directly. Source SHA256: 2ce410cd81479dd20a3dcf4d704e0e2cc8f4415583bd82ae83032522286ebbca -->
+<!-- Generated from private documentation source. Do not edit directly. Source SHA256: dc298d79d1182cb0dd66f830c7dcf9c5f25a3ff0f08c3d5da9611c57f345ab03 -->
 
 # gdlint-web
 
@@ -37,7 +37,7 @@ For contributor verification, prepare the pinned helper source before running na
 
 ```sh
 git clone https://github.com/nicodes/tools.git .ci-tools
-git -C .ci-tools checkout --detach 39666e8d26d2bd0e1c7e5fee6f289fd0fd3a5202
+git -C .ci-tools checkout --detach 46bf98735de2e7fe41cca1042c20c98f5b01824a
 mise install
 mise run check
 ```
